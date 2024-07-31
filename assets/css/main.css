@@ -3858,7 +3858,7 @@ input, select, textarea {
 
 			#main > .posts > article {
 				border-color: #f55142;
-				border-left-width: 2px;
+				border-right-width: 2px;
 				border-style: solid;
 				border-top-width: 2px;
 				text-align: center;
