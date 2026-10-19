@@ -1,181 +1,217 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Hannah Capone Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Hannah Capone</title>
+	<meta name="description" content="Hannah Capone — Forward Deployed AI Engineer at PolyAI, New York." />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Instrument+Serif&family=Sofia+Sans+Extra+Condensed:wght@800;900&family=Homemade+Apple&family=Reenie+Beanie&display=swap" rel="stylesheet" />
+	<link rel="icon" href="assets/site/favicon.svg" type="image/svg+xml" />
+	<link rel="stylesheet" href="assets/site/style.css" />
+</head>
+<body>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+	<!-- Crayon texture for the hand-drawn marks -->
+	<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+		<filter id="crayon">
+			<feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="noise" />
+			<feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" result="wobble" />
+			<feComponentTransfer in="noise" result="grain"><feFuncA type="linear" slope="2.4" intercept="-.35" /></feComponentTransfer>
+			<feComposite in="wobble" in2="grain" operator="in" />
+		</filter>
+	</svg>
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>HANNAH CAPONE</h1>
-						<p>Welcome to my portfolio– a showcase of my projects and abilities.</p>
-							<a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a>
-					</div>
+	<!-- Nav -->
+	<nav class="nav">
+		<a href="#top" class="nav-home" data-scramble>~/hannah</a>
+		<ul>
+			<li><a href="#work" data-scramble>work</a></li>
+			<li><a href="#projects" data-scramble>projects</a></li>
+			<li><a href="#about" data-scramble>about</a></li>
+			<li><a href="#contact" data-scramble>contact</a></li>
+		</ul>
+	</nav>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Hannah Capone</a>
-					</header>
+	<!-- Hero: the name is drawn into an ASCII wave field -->
+	<header class="hero" id="top">
+		<canvas id="ascii" aria-hidden="true"></canvas>
+		<h1 class="sr-only">Hannah Capone</h1>
+		<p class="tagline">Forward Deployed AI Engineer <span>@ PolyAI</span><br />New York City</p>
+		<a href="#work" class="scroll-hint" data-clear>scroll &darr;</a>
+	</header>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
-							<li><a href="about.html">About Me</a></li>
-							<li><a href="#footer">Contact</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/hannah-capone/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/hannahcapone" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+	<main>
 
-				<!-- Main -->
-					<div id="main">
+		<!-- Work -->
+		<section class="section" id="work">
+			<p class="label">Work</p>
+			<div class="body">
+				<h2>Taking AI agents from <em>prototype</em> to <span class="crayon-mark">production.<svg class="crayon-line" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 15 C 60 8, 130 6, 200 9 S 280 13, 296 8" /><path pathLength="1" d="M22 19 C 90 14, 170 13, 288 16" /></svg></span></h2>
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<h2><a href="https://timely-croissant-816b25.netlify.app/">Virtual Scrapbook<br />
-									Web Application</a></h2>
-								</header>
-								<a href="https://timely-croissant-816b25.netlify.app/" class="image main"><img src="images/virtualScrapbook.png" alt="" /></a>
-								<p>This is a web application that I created using <b>React.js </b>as a personal project showcasing my passion for travel and scrapbooking.</p>
-								<ul class="actions special">
-									<li><a href="https://timely-croissant-816b25.netlify.app/" class="button large">Check it out</a></li>
-								</ul>
-							</article>
+				<p class="lede">I'm a Forward Deployed AI Engineer at PolyAI, where I'm the engineer customers work with directly, from the first proof-of-concept through a live production deployment. I build AI agents that handle real customer conversations at enterprise scale, and the integrations that connect them to everything else.</p>
 
-						<!-- Posts -->
-							<section class="posts">
-								<!-- BOOK DEPOT -->
-								<article>
-									<header>
-										<h2>Local Coffee Shop<br />
-										Concept Website</h2>
-									</header>
-									<span class="image fit"><img src="images/BookDepot.png" alt="" /></span>
-									<p>A concept website I designed and built using <b>HTML, CSS, and some JavaScript</b> for my favorite coffee shop/book store in Winthrop, Massachusetts. This was a personal project and is not affiliated with the shop.</p>
-								</article>
-								<!-- HOMTEQ  -->
-								<article>
-									<header>
-										<h2><a href="#">Hometeq<br />
-										Web Application</a></h2>
-									</header>
-									<a href="https://github.com/hannahCapone/HomTeq" class="image fit"><img src="images/HomTeq.png" alt="" /></a>
-									<p>This is an ecommerce web application that I created using <b>PHP, MySQL, CSS, and HTML </b>as a semester-long project while studying Server Side Web Development at the University of Westminster in London.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/hannahCapone/HomTeq" class="button">Check it out!</a></li>
-									</ul>
-								</article>
-								<!-- TO-DO LIST -->
-								<article>
-									<header>
-										<h2><a href="#">To-Do List<br />
-										Web Application</a></h2>
-									</header>
-									<a href="https://github.com/hannahCapone/ToDoList" class="image fit"><img src="images/ToDoList.png" alt="" /></a>
-									<p>This is a simple web application that I created using <b>Node.js, Express, MongoDB, and CSS </b>as a semester-long project while studying Server Side Web Development at the University of Westminster in London.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/hannahCapone/ToDoList" class="button">Check it out!</a></li>
-									</ul>
-								</article>
-								<!-- REKORD STORE -->
-								<article>
-									<header>
-										<h2><a href="#">Rekord Store<br />
-										Web Application</a></h2>
-									</header>
-									<a href="https://github.com/hannahCapone/RekordStore" class="image fit"><img src="images/RekordStore.png" alt="" /></a>
-									<p>This is a simple web application that I created using <b>PHP & MySQL</b> to display proficiency in Server-Side development and display my favorite records.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/hannahCapone/RekordStore" class="button">Check it out!</a></li>
-									</ul>
-								</article>
-								<!-- DICE GAME -->
-								<article>
-									<header>
-										<h2><a href="#">Dice Game<br />
-										Android Application</a></h2>
-									</header>
-									<a href="videos/DiceGame.mp4" class="image fit"><img src="images/DiceGame1.png" alt="" /></a>
-									<p>This is a simple Android application that I created using <b>Kotlin & Android Studio</b> to simulate an interactive human vs. computer dice game.</p>
-									<ul class="actions special">
-										<li><a href="videos/DiceGame.mp4" class="button">Check it out!</a></li>
-									</ul>
-								</article>
-								<!-- C++ WORK -->
-								<article>
-									<header>
-										<h2><a href="#">C++<br />
-										Projects</a></h2>
-									</header>
-									<a href="https://github.com/hannahCapone/Projects" class="image fit"><img src="images/pic01.jpg" alt="" /></a>
-									<p>A repository containing many <b>C++</b> academic projects completed while studying at Fordham.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/hannahCapone/Projects" class="button">Check it out!</a></li>
-									</ul>
-								</article>
-								<!-- JAVA WORK -->
-								<article>
-									<header>
-										<h2><a href="#">Java<br />
-										Projects</a></h2>
-									</header>
-									<a href="https://github.com/hannahCapone/Projects-Java-" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
-									<p>A repository containing many <b>Java</b> academic projects completed while studying at Fordham.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/hannahCapone/Projects-Java-" class="button">Check it out!</a></li>
-									</ul>
-								</article>
-							</section>
-					</div>
-
-				<!-- Footer -->
-				<footer id="footer">
-					<section class="split contact">
-						<section>
-							<h3>Email</h3>
-							<p><a href="mailto:hannahccapone@gmail.com">hannahccapone@gmail.com</a></p>
-						</section>
-						<section>
-							<h3>Social</h3>
-							<ul class="icons alt">
-								<li><a href="https://www.linkedin.com/in/hannah-capone/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://github.com/hannahcapone" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+				<div class="jobs">
+					<article class="job">
+						<p class="meta">Mar 2026 &ndash; present</p>
+						<div>
+							<h3>Forward Deployed AI Engineer IV</h3>
+							<p class="where">PolyAI &middot; New York City</p>
+							<ul>
+								<li>Promoted to Level IV after 18 months for client delivery, technical depth, and cross-team impact.</li>
+								<li>Primary engineer for proof-of-concepts and fast-paced deployments on the Healthcare Pod, and the first point of contact for telephony integrations.</li>
+								<li>Led a proof-of-concept for an enterprise optometry company, delivering telephony, API integrations, and end-to-end call flows in about four weeks.</li>
+								<li>Co-built internal tooling with the agent orchestration team: a Slack app for editing agents straight from Slack threads, and a Jira-triggered bot that drafts pull requests.</li>
 							</ul>
-						</section>
-					</section>
-				</footer>
+						</div>
+					</article>
+					<article class="job">
+						<p class="meta">Sept 2024 &ndash; Mar 2026</p>
+						<div>
+							<h3>Forward Deployed AI Engineer III</h3>
+							<p class="where">PolyAI &middot; New York City</p>
+							<ul>
+								<li>Lead engineer and sole technical representative on a high-visibility commercial banking proof-of-concept, owning telephony, API integration, and performance reporting through a competitive bake-off that PolyAI won and turned into a multi-year enterprise contract.</li>
+								<li>Owned end-to-end delivery for one of PolyAI's largest enterprise clients, at over a million calls a month: stakeholder communication, new builds, a large-scale telephony migration, and ongoing performance monitoring.</li>
+								<li>Led SIP integrations and resolved live telephony issues across the Healthcare Pod, partnering with contact center vendors and mentoring new engineers through their first integrations.</li>
+								<li>Built integrations between client systems and PolyAI's Agent Studio, developing production AI agents in Python across healthcare, financial services, and transportation.</li>
+							</ul>
+						</div>
+					</article>
+					<article class="job">
+						<p class="meta">Summer &ndash; Fall 2023</p>
+						<div>
+							<h3>Software Engineer Intern</h3>
+							<p class="where">toTree &middot; New York City</p>
+							<ul>
+								<li>Built a Java program to calculate the most cost-effective flat-rate shipping price.</li>
+								<li>Contributed to website development in Vue.js and built internal tooling.</li>
+							</ul>
+						</div>
+					</article>
+					<article class="job">
+						<p class="meta">Sept 2021 &ndash; Dec 2022</p>
+						<div>
+							<h3>Computer Science Tutor</h3>
+							<p class="where">Fordham University HEOP &middot; Bronx, NY</p>
+							<ul>
+								<li>Tutored Computer Science I &amp; II students weekly in C++, debugging, testing, and object-oriented design.</li>
+							</ul>
+						</div>
+					</article>
+				</div>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; 2026 Hannah Capone</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+				<div class="skills">
+					<div>
+						<h4>Languages &amp; tools</h4>
+						<p>Python, C++, Java, Go, SQL, REST APIs, AWS, Datadog, Git/GitHub, Jira</p>
 					</div>
+					<div>
+						<h4>AI &amp; agents</h4>
+						<p>MCP, RAG, conversational AI, prompt engineering, ASR/TTS</p>
+					</div>
+					<div>
+						<h4>Telephony</h4>
+						<p>SIP, VoIP, TLS, UDP, RTP, CCaaS platforms (Twilio, Genesys, NICE, AWS Connect, Five9)</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
+		<!-- Projects -->
+		<section class="section" id="projects">
+			<p class="label">Projects</p>
+			<div class="body">
+				<h2>Things I've <em>made</em> on the side.</h2>
+
+				<div class="projects">
+					<a class="project" href="https://timely-croissant-816b25.netlify.app/">
+						<img src="images/virtualScrapbook.png" alt="Virtual Scrapbook web app" loading="lazy" />
+						<h3>Virtual Scrapbook <span>&nearr;</span></h3>
+						<p>A React app for my two favorite things: travel and scrapbooking.</p>
+						<p class="meta">React</p>
+					</a>
+					<div class="project">
+						<img src="images/BookDepot.png" alt="Coffee shop concept website" loading="lazy" />
+						<h3>Local Coffee Shop</h3>
+						<p>A concept site for my favorite coffee shop/book store in Winthrop, MA. A personal project, not affiliated with the shop.</p>
+						<p class="meta">HTML &middot; CSS &middot; JavaScript</p>
+					</div>
+					<a class="project" href="https://github.com/hannahCapone/HomTeq">
+						<img src="images/HomTeq.png" alt="Hometeq ecommerce app" loading="lazy" />
+						<h3>Hometeq <span>&nearr;</span></h3>
+						<p>An ecommerce web app built over a semester at the University of Westminster in London.</p>
+						<p class="meta">PHP &middot; MySQL</p>
+					</a>
+					<a class="project" href="https://github.com/hannahCapone/ToDoList">
+						<img src="images/ToDoList.png" alt="To-do list app" loading="lazy" />
+						<h3>To-Do List <span>&nearr;</span></h3>
+						<p>A full-stack to-do app with a database behind it.</p>
+						<p class="meta">Node &middot; Express &middot; MongoDB</p>
+					</a>
+					<a class="project" href="https://github.com/hannahCapone/RekordStore">
+						<img src="images/RekordStore.png" alt="Rekord Store app" loading="lazy" />
+						<h3>Rekord Store <span>&nearr;</span></h3>
+						<p>My favorite records, served from a database.</p>
+						<p class="meta">PHP &middot; MySQL</p>
+					</a>
+					<a class="project" href="videos/DiceGame.mp4">
+						<img src="images/DiceGame1.png" alt="Dice game Android app" loading="lazy" />
+						<h3>Dice Game <span>&nearr;</span></h3>
+						<p>A human vs. computer dice game for Android.</p>
+						<p class="meta">Kotlin</p>
+					</a>
+				</div>
+				<p class="more">Plus coursework in <a href="https://github.com/hannahCapone/Projects">C++</a> and <a href="https://github.com/hannahCapone/Projects-Java-">Java</a> from Fordham.</p>
+			</div>
+		</section>
+
+		<!-- About -->
+		<section class="section" id="about">
+			<p class="label">About me <span class="margin-note scrawl">go celtics!</span></p>
+			<div class="body">
+				<h2>Engineer with a <em>visual arts</em> minor.</h2>
+				<div class="about">
+					<figure>
+						<img src="images/aboutMe-Pic1.jpeg" alt="Hannah at graduation" loading="lazy" />
+						<figcaption class="meta">Fordham, May 2024</figcaption>
+					</figure>
+					<div>
+						<p>I grew up in Winthrop, Massachusetts, a small seaside town just outside Boston, and now live in New York City.</p>
+						<p>I studied Computer Science at Fordham University, graduating in May 2024 with a 3.9 GPA, a minor in Visual Arts, and a concentration in Graphic Design. I was a Fordham Jogues Scholar, a member of the Alpha Sigma Nu Jesuit Honor Society, and on the Dean's List, and I spent a semester studying at the University of Westminster in London.</p>
+						<p>On campus I tutored Computer Science through Fordham's Higher Education Opportunity Program and was involved in Girls Who Code, the Computer Science Society, Women in STEM, and SPIRE, a women's empowerment club.</p>
+						<p>I've always lived somewhere between engineering and art, which is probably why forward deployed work suits me: it's half building, half people, and every customer is a new problem to design around.</p>
+						<p>Outside of work, I'm usually shooting film, scrapbooking, painting, or traveling.</p>
+					</div>
+				</div>
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<div class="film">
+				<figure><img src="images/film/film-1.jpg" alt="White church with a red roof in Iceland" loading="lazy" /><figcaption class="meta">iceland, 2026</figcaption></figure>
+				<figure><img src="images/film/film-2.jpg" alt="River running through green Icelandic hills" loading="lazy" /><figcaption class="meta">iceland, 2026</figcaption></figure>
+				<figure><img src="images/film/film-3.jpg" alt="Friends on horseback in front of mountains" loading="lazy" /><figcaption class="meta">jackson hole, 2026</figcaption></figure>
+				<figure><img src="images/film/film-4.jpg" alt="Bison grazing in a meadow" loading="lazy" /><figcaption class="meta">yellowstone, 2026</figcaption></figure>
+			</div>
+		</section>
 
-	</body>
+		<!-- Contact -->
+		<section class="section" id="contact">
+			<p class="label">Contact</p>
+			<div class="body">
+				<h2>Say <em>hello.</em></h2>
+				<ul class="contact">
+					<li><span class="meta">Email</span><a href="mailto:hannahccapone@gmail.com">hannahccapone@gmail.com</a></li>
+					<li><span class="meta">LinkedIn</span><a href="https://www.linkedin.com/in/hannah-capone/">in/hannah-capone</a></li>
+					<li><span class="meta">GitHub</span><a href="https://github.com/hannahcapone">github.com/hannahcapone</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<footer class="footer meta">&copy; 2026 Hannah Capone</footer>
+	</main>
+
+	<script src="assets/site/ascii.js"></script>
+	<script src="assets/site/fx.js"></script>
+</body>
 </html>
