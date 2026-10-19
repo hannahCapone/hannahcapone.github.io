@@ -194,12 +194,12 @@ h2 em {
 .jobs { border-top: 1px solid var(--rule); }
 .job {
 	display: grid;
-	grid-template-columns: 11rem minmax(0, 1fr);
+	grid-template-columns: 14rem minmax(0, 1fr);
 	gap: 1.5rem;
 	padding: 2rem 0;
 	border-bottom: 1px solid var(--rule);
 }
-.job .meta { padding-top: .2rem; font-size: 1.7rem; }
+.job .meta { padding-top: .2rem; font-size: 1.7rem; white-space: nowrap; }
 .job h3 {
 	font-weight: 800;
 	font-size: clamp(1.8rem, 3.2vw, 2.4rem);
