@@ -51,7 +51,7 @@ img { max-width: 100%; display: block; }
 	top: 0; left: 0; right: 0;
 	z-index: 10;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
 	gap: .5rem 1.5rem;
 	padding: .9rem var(--gutter);
@@ -61,7 +61,6 @@ img { max-width: 100%; display: block; }
 }
 .nav a { text-decoration: none; }
 .nav a:hover { color: var(--red); }
-.nav-home { font-weight: 700; color: var(--red); }
 .nav ul { list-style: none; display: flex; gap: 1.25rem; margin: 0; padding: 0; }
 
 /* Hero */
@@ -83,16 +82,6 @@ img { max-width: 100%; display: block; }
 	font: clamp(.85rem, 1.6vw, 1.05rem)/1.6 var(--mono);
 }
 .tagline span { padding: 0 .3em; background: var(--polyai); }
-.scroll-hint {
-	position: absolute;
-	right: var(--gutter);
-	bottom: 1.5rem;
-	font-size: .8rem;
-	color: var(--violet);
-	text-decoration: none;
-	animation: bob 2.4s ease-in-out infinite;
-}
-@keyframes bob { 50% { transform: translateY(6px); } }
 
 /* Sections: label in a narrow left column, content on the right */
 .section {
@@ -351,13 +340,11 @@ h2 em {
 	.about { grid-template-columns: 1fr; }
 	.about figure { max-width: 340px; }
 	.nav { font-size: .78rem; }
-	.nav-home { display: none; }
-	.nav ul { width: 100%; justify-content: space-between; gap: .5rem; }
+	.nav ul { gap: 1rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
 	html { scroll-behavior: auto; }
-	.scroll-hint { animation: none; }
 	.contact a { transition: none; }
 	.crayon-line path { stroke-dashoffset: 0; transition: none; }
 }
