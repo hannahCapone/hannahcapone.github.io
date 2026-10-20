@@ -181,6 +181,8 @@ main .section {
 .crayon-stars path:nth-child(2) { transition-delay: .3s; }
 .crayon-stars path:nth-child(3) { transition-delay: .6s; }
 .crayon-mark.is-drawn path { stroke-dashoffset: 0; }
+/* Headings stay on one line where there is room */
+@media (min-width: 761px) { h2 { white-space: nowrap; } }
 .stars-after .crayon-stars { left: auto; right: -.7em; top: -.3em; }
 
 /* "most recent trip" note with an arrow down to the Iceland prints */
@@ -210,12 +212,22 @@ main .section {
 	transform: scaleX(-1);
 }
 .crayon-arrow path { stroke-width: 4; }
+.side-arrow {
+	position: absolute;
+	left: 100%;
+	top: .15em;
+	width: 1.15em;
+	height: 1.35em;
+	margin-left: .1em;
+	transform: none;
+}
+.side-arrow path { stroke-width: 7; }
 .crayon-arrow path + path { transition-delay: .6s; }
 
 h2 {
 	color: var(--hero-name);
 	font-weight: 900;
-	font-size: clamp(3.2rem, 7.6vw, 6rem);
+	font-size: clamp(2.6rem, 5.4vw, 5rem);
 	line-height: .92;
 	font-family: var(--display);
 	text-transform: uppercase;
