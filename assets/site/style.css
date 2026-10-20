@@ -162,7 +162,7 @@ main .section {
 .crayon-mark.is-drawn path { stroke-dashoffset: 0; }
 
 h2 {
-	color: var(--hero-name-edge);
+	color: var(--hero-name);
 	font-weight: 900;
 	font-size: clamp(3.2rem, 7.6vw, 6rem);
 	line-height: .92;
