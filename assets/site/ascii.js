@@ -94,13 +94,16 @@
 	// Place the art at its own character size so every character shows, then mark
 	// the grid cells it covers so the waves stay out from under it.
 	function buildMask() {
-		const marginPx = Math.min(40, Math.max(16, W * 0.04));
-		// Fit the art inside the hero by width and height (lines are about twice as tall as characters are wide).
-		art.cell = Math.min((W - marginPx * 2) / artCanvas.width, (H * 0.72) / (artCanvas.height * 2.05), 14);
-		art.line = art.cell * 2.05;
+		const marginPx = Math.min(24, Math.max(10, W * 0.02));
+		// Fit the art inside the hero by width and height; lines are packed a little tighter than the
+		// font's natural spacing so the name can be taller.
+		const LINE = 1.8;
+		const usableHeight = H - Math.max(52, H * 0.07) - 150; // leave room for the tagline
+		art.cell = Math.min((W - marginPx * 2) / artCanvas.width, usableHeight / (artCanvas.height * LINE), 16);
+		art.line = art.cell * LINE;
 		art.font = `700 ${(art.cell / 0.6).toFixed(2)}px "Space Mono", monospace`;
 		art.x = marginPx;
-		art.y = Math.max(56, H * 0.09);
+		art.y = Math.max(52, H * 0.07);
 
 		const off = document.createElement('canvas');
 		off.width = cols;

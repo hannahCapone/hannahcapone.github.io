@@ -1,8 +1,6 @@
 /* One palette: lavender, true red, pen blue on paper, PolyAI green as the highlight */
 :root {
 	--lavender: #cdc3f1;
-	--lavender-deep: #9d8fe0;
-	--violet: #5b4bb8;
 	--polyai: #d9ee50;
 
 	/* Hero ASCII colors (read by ascii.js) */
@@ -15,7 +13,8 @@
 	--hero-name-edge: #e9634d;
 	--hero-shine: var(--polyai);
 
-	--paper: #f3efe6;
+	--paper: #f6f2e9;
+	--print: #fdfcf8;
 	--ink: #1c1a17;
 	--ink-soft: #6b655b;
 	--rule: rgba(28, 26, 23, .14);
@@ -97,11 +96,11 @@ img { max-width: 100%; display: block; }
 main { background: var(--desk); padding: clamp(1.5rem, 4vw, 3rem) clamp(.75rem, 3vw, 2.5rem) 0; }
 main .section {
 	margin-bottom: clamp(1.5rem, 4vw, 3rem);
-	background: var(--grain), var(--sheet, #f6f2e9);
+	background: var(--grain), var(--sheet, var(--paper));
 	box-shadow: 0 1px 2px rgba(28, 26, 23, .08), 0 14px 30px -18px rgba(28, 26, 23, .35);
 }
 #work {
-	--sheet: #f7f4ec;
+	--sheet: var(--paper);
 	background:
 		var(--grain),
 		linear-gradient(rgba(61, 47, 148, .07) 1px, transparent 1px) 0 0 / 24px 24px,
@@ -113,7 +112,7 @@ main .section {
 	background: linear-gradient(rgba(240, 244, 255, .45), rgba(240, 244, 255, .45)), url(../../images/paper/paper-002.jpg) 0 0 / 700px auto, #eef2ff;
 	background-blend-mode: normal, multiply;
 }
-#projects .project-info > p:not(.meta):not(.links):not(.tech) { color: #3a3630; }
+#projects .project-info > p:not(.meta):not(.links):not(.tech) { color: var(--ink); }
 #about { background: url(../../images/paper/paper-002.jpg) 0 0 / 700px auto; }
 #contact { --sheet: #ddd6f6; }
 .label {
@@ -149,7 +148,25 @@ main .section {
 	overflow: visible;
 	filter: url(#crayon);
 }
-.crayon-line path {
+.crayon-circle {
+	position: absolute;
+	left: -10%;
+	top: -6%;
+	width: 120%;
+	height: 118%;
+	overflow: visible;
+	filter: url(#crayon);
+}
+.crayon-stars {
+	position: absolute;
+	left: -.55em;
+	top: -.45em;
+	width: .55em;
+	height: .55em;
+	overflow: visible;
+	filter: url(#crayon);
+}
+.crayon-line path, .crayon-circle path, .crayon-stars path, .crayon-arrow path {
 	fill: none;
 	stroke: var(--red);
 	stroke-width: 5;
@@ -159,7 +176,41 @@ main .section {
 	transition: stroke-dashoffset .7s cubic-bezier(.6, 0, .3, 1);
 }
 .crayon-line path + path { stroke-width: 3.5; transition-delay: .55s; }
+.crayon-circle path { stroke-width: 3.5; transition-duration: 1s; }
+.crayon-stars path { stroke-width: 4; }
+.crayon-stars path:nth-child(2) { transition-delay: .3s; }
+.crayon-stars path:nth-child(3) { transition-delay: .6s; }
 .crayon-mark.is-drawn path { stroke-dashoffset: 0; }
+.stars-after .crayon-stars { left: auto; right: -.7em; top: -.3em; }
+
+/* "most recent trip" note with an arrow down to the Iceland prints */
+.film { position: relative; }
+.trip-note {
+	position: absolute;
+	z-index: 2;
+	left: 6%;
+	bottom: calc(100% - .5rem);
+	display: flex;
+	align-items: flex-end;
+	white-space: nowrap;
+	pointer-events: none;
+}
+.trip-label {
+	order: 2;
+	margin: 0 0 4.6rem -.5rem;
+	font: 1.35rem/1 var(--crayon);
+	color: var(--red);
+	transform: rotate(-4deg);
+}
+.crayon-arrow {
+	width: 120px;
+	height: 84px;
+	overflow: visible;
+	filter: url(#crayon);
+	transform: scaleX(-1);
+}
+.crayon-arrow path { stroke-width: 4; }
+.crayon-arrow path + path { transition-delay: .6s; }
 
 h2 {
 	color: var(--hero-name);
@@ -248,8 +299,8 @@ h2 em {
 	width: 100%;
 	object-fit: cover;
 	object-position: top;
-	border: 6px solid #fdfcf8;
-	box-shadow: 0 1px 2px rgba(40, 50, 10, .15), 0 14px 24px -16px rgba(40, 50, 10, .5);
+	border: 6px solid var(--print);
+	box-shadow: 0 1px 2px rgba(28, 26, 23, .12), 0 14px 24px -16px rgba(28, 26, 23, .45);
 }
 .project-info { padding-top: 1.1rem; }
 .project-info > .meta:first-child { font-size: 1.2rem; }
@@ -262,7 +313,7 @@ h2 em {
 	margin: .2rem 0 .5rem;
 }
 .project-info > p:not(.meta):not(.links):not(.tech) { margin: 0 0 .6rem; color: var(--ink-soft); }
-.tech { margin: 0; font: 800 1.15rem/1.2 var(--display); text-transform: uppercase; letter-spacing: .04em; color: var(--violet); }
+.tech { margin: 0; font: 800 1.15rem/1.2 var(--display); text-transform: uppercase; letter-spacing: .04em; color: var(--pen-ink); }
 .links { display: flex; flex-wrap: wrap; gap: 1.25rem; margin: .6rem 0 0; }
 .links a { color: var(--red); text-decoration: none; }
 .links a:hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -287,18 +338,18 @@ h2 em {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
 	gap: clamp(1rem, 2.5vw, 2rem);
-	margin-top: 2.5rem;
+	margin-top: 7rem;
 }
 .film figure {
 	margin: 0;
 	padding: .6rem .6rem 0;
-	background: #fdfcf8;
+	background: var(--print);
 	box-shadow: 0 1px 2px rgba(28, 26, 23, .12), 0 14px 26px -14px rgba(28, 26, 23, .45);
 }
-.film figure:nth-child(1) { transform: rotate(-3deg) translateY(6px); }
-.film figure:nth-child(2) { transform: rotate(2deg) translateY(-8px); }
-.film figure:nth-child(3) { transform: rotate(-1.5deg) translateY(10px); }
-.film figure:nth-child(4) { transform: rotate(3deg); }
+.film figure:nth-of-type(1) { transform: rotate(-3deg) translateY(6px); }
+.film figure:nth-of-type(2) { transform: rotate(2deg) translateY(-8px); }
+.film figure:nth-of-type(3) { transform: rotate(-1.5deg) translateY(10px); }
+.film figure:nth-of-type(4) { transform: rotate(3deg); }
 .film img { aspect-ratio: 3 / 2; width: 100%; object-fit: cover; }
 .film figcaption { padding: .55rem 0 .7rem; text-align: center; }
 
@@ -346,5 +397,5 @@ h2 em {
 @media (prefers-reduced-motion: reduce) {
 	html { scroll-behavior: auto; }
 	.contact a { transition: none; }
-	.crayon-line path { stroke-dashoffset: 0; transition: none; }
+	.crayon-line path, .crayon-circle path, .crayon-stars path, .crayon-arrow path { stroke-dashoffset: 0; transition: none; }
 }
