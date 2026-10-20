@@ -56,16 +56,20 @@
 		buildClear();
 	}
 
+	// The page can be drawn smaller with CSS zoom; screen positions are divided by it to get canvas positions.
+	const zoom = () => canvas.getBoundingClientRect().width / canvas.clientWidth || 1;
+
 	// Keep the waves out from behind the tagline and scroll hint so the text stays clean.
 	function buildClear() {
 		clear = new Uint8Array(cols * rows);
 		const origin = canvas.getBoundingClientRect();
+		const z = zoom();
 		clearEls.forEach((el) => {
 			const r = el.getBoundingClientRect();
-			const x0 = Math.max(0, Math.floor((r.left - origin.left) / cw) - 3);
-			const x1 = Math.min(cols, Math.ceil((r.right - origin.left) / cw) + 3);
-			const y0 = Math.max(0, Math.floor((r.top - origin.top) / ch) - 1);
-			const y1 = Math.min(rows, Math.ceil((r.bottom - origin.top) / ch) + 1);
+			const x0 = Math.max(0, Math.floor((r.left - origin.left) / z / cw) - 3);
+			const x1 = Math.min(cols, Math.ceil((r.right - origin.left) / z / cw) + 3);
+			const y0 = Math.max(0, Math.floor((r.top - origin.top) / z / ch) - 1);
+			const y1 = Math.min(rows, Math.ceil((r.bottom - origin.top) / z / ch) + 1);
 			for (let y = y0; y < y1; y++) clear.fill(1, y * cols + x0, y * cols + x1);
 		});
 	}
@@ -201,8 +205,9 @@
 
 	window.addEventListener('pointermove', (e) => {
 		const r = canvas.getBoundingClientRect();
-		mouse.x = e.clientX - r.left;
-		mouse.y = e.clientY - r.top;
+		const z = zoom();
+		mouse.x = (e.clientX - r.left) / z;
+		mouse.y = (e.clientY - r.top) / z;
 	});
 	document.addEventListener('pointerleave', () => { mouse.x = mouse.y = -1e4; });
 

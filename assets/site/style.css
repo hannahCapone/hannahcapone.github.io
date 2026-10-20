@@ -28,7 +28,14 @@
 	--pen-ink: var(--hero-ripple);
 	--red: #d0311f;
 	--gutter: clamp(1.25rem, 4vw, 3rem);
+
+	/* On laptop and desktop screens the site is drawn at 80% size */
+	--zoom: 1;
 }
+@media (min-width: 1000px) {
+	:root { --zoom: .8; }
+}
+html { zoom: var(--zoom); }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -67,8 +74,8 @@ img { max-width: 100%; display: block; }
 /* Hero */
 .hero {
 	position: relative;
-	height: 100vh;
-	height: 100svh;
+	height: calc(100vh / var(--zoom));
+	height: calc(100svh / var(--zoom));
 	min-height: 520px;
 	background: var(--hero-bg);
 	color: var(--ink);
