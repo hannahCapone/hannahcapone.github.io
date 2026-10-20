@@ -167,8 +167,8 @@ main .section {
 }
 /* Hand-drawn exclamation point after "hey" */
 .crayon-bang {
-	width: .26em;
-	height: .7em;
+	width: .3em;
+	height: .85em;
 	margin-left: .06em;
 	overflow: visible;
 	filter: url(#crayon);
@@ -210,9 +210,9 @@ main .section {
 	transform: rotate(-4deg);
 }
 .trip-arrow {
-	width: 48px;
-	height: 84px;
-	margin: .3rem 0 0 2.5rem;
+	width: 62px;
+	height: 86px;
+	margin: .3rem 0 0 1.5rem;
 	transform: none;
 }
 .crayon-arrow {
@@ -247,7 +247,7 @@ h2 {
 /* Same waxy crayon texture as the drawn marks */
 h2 em {
 	filter: url(#crayon);
-	font: 400 .5em/1 var(--crayon);
+	font: 400 .72em/1 var(--crayon);
 	text-transform: none;
 	color: var(--red);
 	letter-spacing: 0;
