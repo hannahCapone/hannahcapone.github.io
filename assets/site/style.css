@@ -193,24 +193,29 @@ main .section {
 @media (min-width: 761px) { h2 { white-space: nowrap; } }
 .stars-after .crayon-stars { left: auto; right: -.7em; top: -.3em; }
 
-/* "most recent trip" note with an arrow down to the Iceland prints */
+/* "most recent trip" note; its arrow starts under the words and lands on the Iceland photo */
 .film { position: relative; }
 .trip-note {
 	position: absolute;
 	z-index: 2;
-	left: 6%;
-	bottom: calc(100% - .5rem);
+	left: 8%;
+	bottom: calc(100% - 4.5rem);
 	display: flex;
-	align-items: flex-end;
+	flex-direction: column;
+	align-items: flex-start;
 	white-space: nowrap;
 	pointer-events: none;
 }
 .trip-label {
-	order: 2;
-	margin: 0 0 4.6rem -.5rem;
 	font: 1.35rem/1 var(--crayon);
 	color: var(--red);
 	transform: rotate(-4deg);
+}
+.trip-arrow {
+	width: 48px;
+	height: 84px;
+	margin: .3rem 0 0 2.5rem;
+	transform: none;
 }
 .crayon-arrow {
 	width: 120px;
