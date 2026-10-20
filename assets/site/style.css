@@ -165,16 +165,15 @@ main .section {
 	overflow: visible;
 	filter: url(#crayon);
 }
-.crayon-stars {
-	position: absolute;
-	left: -.55em;
-	top: -.45em;
-	width: .55em;
-	height: .55em;
+/* Hand-drawn exclamation point after "hey" */
+.crayon-bang {
+	width: .26em;
+	height: .7em;
+	margin-left: .06em;
 	overflow: visible;
 	filter: url(#crayon);
 }
-.crayon-line path, .crayon-circle path, .crayon-stars path, .crayon-arrow path {
+.crayon-line path, .crayon-circle path, .crayon-bang path, .crayon-arrow path {
 	fill: none;
 	stroke: var(--red);
 	stroke-width: 5;
@@ -185,13 +184,11 @@ main .section {
 }
 .crayon-line path + path { stroke-width: 3.5; transition-delay: .55s; }
 .crayon-circle path { stroke-width: 3.5; transition-duration: 1s; }
-.crayon-stars path { stroke-width: 4; }
-.crayon-stars path:nth-child(2) { transition-delay: .3s; }
-.crayon-stars path:nth-child(3) { transition-delay: .6s; }
+.crayon-bang path { stroke-width: 10; transition-duration: .35s; }
+.crayon-bang path + path { stroke-width: 13; transition-delay: .35s; }
 .crayon-mark.is-drawn path { stroke-dashoffset: 0; }
 /* Headings stay on one line where there is room */
 @media (min-width: 761px) { h2 { white-space: nowrap; } }
-.stars-after .crayon-stars { left: auto; right: -.7em; top: -.3em; }
 
 /* "most recent trip" note; its arrow starts under the words and lands on the Iceland photo */
 .film { position: relative; }
@@ -400,5 +397,5 @@ h2 em {
 @media (prefers-reduced-motion: reduce) {
 	html { scroll-behavior: auto; }
 	.contact a { transition: none; }
-	.crayon-line path, .crayon-circle path, .crayon-stars path, .crayon-arrow path { stroke-dashoffset: 0; transition: none; }
+	.crayon-line path, .crayon-circle path, .crayon-bang path, .crayon-arrow path { stroke-dashoffset: 0; transition: none; }
 }
