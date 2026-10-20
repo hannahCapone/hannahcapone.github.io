@@ -292,26 +292,11 @@ h2 em {
 	gap: 3.5rem 2.5rem;
 }
 .window { position: relative; display: block; text-decoration: none; }
-.window::before {
-	content: "";
-	position: absolute;
-	z-index: 1;
-	top: -12px;
-	left: 50%;
-	width: 92px;
-	height: 26px;
-	transform: translateX(-50%) rotate(var(--tilt, -3deg));
-	background: var(--grain), rgba(217, 238, 80, .85);
-	clip-path: polygon(3% 0, 97% 0, 100% 12%, 96% 25%, 100% 38%, 97% 52%, 100% 66%, 96% 80%, 99% 92%, 97% 100%, 3% 100%, 0 88%, 4% 74%, 0 60%, 3% 46%, 0 32%, 4% 18%, 1% 6%);
-}
-.project:nth-child(2n) .window::before { --tilt: 4deg; left: 42%; }
-.project:nth-child(3n) .window::before { --tilt: -1deg; left: 58%; }
 .window img {
 	aspect-ratio: 16 / 10;
 	width: 100%;
 	object-fit: cover;
 	object-position: top;
-	border: 6px solid var(--print);
 	box-shadow: 0 1px 2px rgba(28, 26, 23, .12), 0 14px 24px -16px rgba(28, 26, 23, .45);
 }
 .project-info { padding-top: 1.1rem; }
