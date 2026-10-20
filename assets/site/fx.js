@@ -4,6 +4,6 @@
 
 	const marks = new IntersectionObserver((entries) => {
 		entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-drawn'); marks.unobserve(e.target); } });
-	}, { threshold: 1 });
+	}, { threshold: .5 });
 	document.querySelectorAll('.crayon-mark').forEach((el) => marks.observe(el));
 })();

@@ -184,8 +184,8 @@ main .section {
 }
 .crayon-line path + path { stroke-width: 3.5; transition-delay: .55s; }
 .crayon-circle path { stroke-width: 3.5; transition-duration: 1s; }
-.crayon-bang path { stroke-width: 10; transition-duration: .35s; }
-.crayon-bang path + path { stroke-width: 13; transition-delay: .35s; }
+.crayon-bang path { stroke-width: 6; transition-duration: .35s; }
+.crayon-bang path + path { stroke-width: 8; transition-delay: .35s; }
 .crayon-mark.is-drawn path { stroke-dashoffset: 0; }
 /* Headings stay on one line where there is room */
 @media (min-width: 761px) { h2 { white-space: nowrap; } }
@@ -243,7 +243,9 @@ h2 {
 	text-transform: uppercase;
 	margin: 0 0 3.5rem;
 }
+/* Same waxy crayon texture as the drawn marks */
 h2 em {
+	filter: url(#crayon);
 	font: 400 .5em/1 var(--crayon);
 	text-transform: none;
 	color: var(--red);
