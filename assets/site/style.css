@@ -204,6 +204,7 @@ main .section {
 	pointer-events: none;
 }
 .trip-label {
+	filter: url(#crayon);
 	font: 1.35rem/1 var(--crayon);
 	color: var(--red);
 	transform: rotate(-4deg);
